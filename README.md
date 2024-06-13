@@ -1,9 +1,9 @@
 | strHomeTeam   | strAwayTeam   | intHomeScore   | intAwayScore   | strStatus     | strCountry   | strLeague       | strSport   | Rating   | TV Listing   |
 |:--------------|:--------------|:---------------|:---------------|:--------------|:-------------|:----------------|:-----------|:---------|:-------------|
-| Angostura     | Bolivar       | 0              | 0              | 84            | VENEZUELA    | Copa Venezuela  | football   | 32       | -            |
-| Aragua        | Maritimo      | 0              | 0              | 84            | VENEZUELA    | Copa Venezuela  | football   | 27       | -            |
-| Trujillanos   | Rayo Zuliano  | 2              | 0              | 80            | VENEZUELA    | Copa Venezuela  | football   | 8        | -            |
-| Flamengo      | Franca        | 18             | 21             | 2nd Quarter 8 | BRAZIL       | NBB - Play Offs | basketball |          | YouTube      |
+| Angostura     | Bolivar       | 0              | 0              | 87            | VENEZUELA    | Copa Venezuela  | football   | 33       | -            |
+| Aragua        | Maritimo      | 0              | 0              | 87            | VENEZUELA    | Copa Venezuela  | football   | 27       | -            |
+| Trujillanos   | Rayo Zuliano  | 2              | 0              | 82            | VENEZUELA    | Copa Venezuela  | football   | 8        | -            |
+| Flamengo      | Franca        | 21             | 23             | 2nd Quarter 9 | BRAZIL       | NBB - Play Offs | basketball |          | YouTube      |
 |               |               |                |                |               |              |                 |            |          |              |
 |               |               |                |                |               |              |                 |            |          |              |
 |               |               |                |                |               |              |                 |            |          |              |
