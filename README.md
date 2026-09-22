@@ -1,2 +1,3 @@
-| Rating   | Sport   | League   | Teams   | Status   | Score   | TV Listing   |
-|----------|---------|----------|---------|----------|---------|--------------|
+| Rating                                                                                                                                 | Sport                                                                                                        | League            | Teams                   |   Status | Score   | TV Listing   |
+|:---------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------|:------------------|:------------------------|---------:|:--------|:-------------|
+| <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/47.svg" alt="47"> | <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/master/soccer.png" alt="Soccer"> | BRAZIL<br>Serie B | Criciuma<br>Operario-PR |       49 | 0<br>1  | -            |
