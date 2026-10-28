@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090c">
+<meta name="description" content="Live sports scores, match ratings, and TV listings.">
+<title>Live Sports Scoreboard</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #08090c;
+    --panel: #17191f;
+    --panel-border: #292c34;
+    --text: #f5f5f7;
+    --muted: #9297a3;
+    --accent: #77a7ff;
+    --live: #ff514e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: min(100% - 28px, 760px);
+    margin: 0 auto;
+    padding: 30px 0 48px;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(27px, 6vw, 38px);
+    font-weight: 750;
+    letter-spacing: -1.2px;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 7px;
+  }
+
+  .updated {
+    color: var(--muted);
+    font-size: 11px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .scoreboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .game-card {
+    overflow: hidden;
+    border: 1px solid var(--panel-border);
+    border-radius: 18px;
+    background: var(--panel);
+  }
+
+  .card-header {
+    min-height: 45px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--panel-border);
+  }
+
+  .league-name {
+    color: #c3c6ce;
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: .25px;
+  }
+
+  .rating {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 26px;
+    padding: 0 7px;
+    border-radius: 8px;
+    background: #292f3b;
+    color: #d8e5ff;
+    font-size: 12px;
+    font-weight: 750;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .matchup {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    padding: 19px 14px 17px;
+  }
+
+  .team {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    text-align: center;
+  }
+
+  .team-logo {
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .team-name {
+    max-width: 100%;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .score-block {
+    min-width: 100px;
+    text-align: center;
+  }
+
+  .score-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    font-size: clamp(28px, 7vw, 38px);
+    line-height: 1;
+    font-weight: 760;
+    letter-spacing: -1px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .score-divider {
+    color: #666b76;
+    font-size: 23px;
+    font-weight: 400;
+  }
+
+  .game-status {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 4px 1px 0;
+    border-radius: 50%;
+    background: #777d88;
+  }
+
+  .status-dot.live {
+    background: var(--live);
+    box-shadow: 0 0 8px #ff514e55;
+  }
+
+  .tv-row {
+    min-height: 42px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 11px 16px 13px;
+    border-top: 1px solid var(--panel-border);
+  }
+
+  .tv-label {
+    flex: 0 0 auto;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: .8px;
+  }
+
+  .tv-listing {
+    min-width: 0;
+    color: #d4d6dc;
+    font-size: 11px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .tv-listing a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .tv-listing a:hover { text-decoration: underline; }
+  .tv-separator { color: #666b76; padding: 0 3px; }
+  .muted { color: var(--muted); }
+
+  .empty-state {
+    padding: 36px 18px;
+    border: 1px solid var(--panel-border);
+    border-radius: 18px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  footer {
+    margin-top: 24px;
+    color: #747985;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  @media (min-width: 680px) {
+    .page { padding-top: 42px; }
+    .scoreboard { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .matchup { gap: 4px; padding-left: 10px; padding-right: 10px; }
+    .team-logo { width: 42px; height: 42px; }
+    .score-block { min-width: 88px; }
+    .score-line { gap: 6px; }
+  }
+
+  @media (max-width: 380px) {
+    .page { width: calc(100% - 18px); }
+    .matchup { padding-left: 8px; padding-right: 8px; gap: 4px; }
+    .team-logo { width: 38px; height: 38px; }
+    .team-name { font-size: 11px; }
+    .score-block { min-width: 82px; }
+    .score-line { gap: 5px; font-size: 28px; }
+    .updated { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <div>
+        <h1>Sports</h1>
+        <div class="subtitle">Scores · Ratings · Where to watch</div>
+      </div>
+      <div class="updated">Updated<br>Oct 28, 2026 · 19:42 UTC</div>
+    </header>
+
+    <section class="scoreboard">
+      
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Greek Football Cup</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/72.svg" alt="72" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://r2.thesportsdb.com/images/media/team/badge/m15zsh1602774126.png" alt="PAOK" loading="lazy" onerror="this.style.display='none'">
+              <div class="team-name">PAOK</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>1</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+              <div class="game-status">
+                <span class="status-dot "></span>
+                52
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://r2.thesportsdb.com/images/media/team/badge/4nogst1602773624.png" alt="AEK Athens" loading="lazy" onerror="this.style.display='none'">
+              <div class="team-name">AEK Athens</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">ANT1 Satellite, Skai TV, Cytavision on the Go, Cytavision Sports 8, Skai Hybrid TV</div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Basketball Champions League</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/54.svg" alt="54" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://r2.thesportsdb.com/images/media/team/badge/ukssyu1714562769.png" alt="Rasta Vechta" loading="lazy" onerror="this.style.display='none'">
+              <div class="team-name">Rasta Vechta</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>74</span>
+                <span class="score-divider">:</span>
+                <span>79</span>
+              </div>
+              <div class="game-status">
+                <span class="status-dot "></span>
+                6
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://r2.thesportsdb.com/images/media/team/badge/n2jjb81698244950.png" alt="Hapoel Holon" loading="lazy" onerror="this.style.display='none'">
+              <div class="team-name">Hapoel Holon</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">DAZN</div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Peruvian Primera Division</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/44.svg" alt="44" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://r2.thesportsdb.com/images/media/team/badge/fl9mlx1768236425.png" alt="Cajamarca" loading="lazy" onerror="this.style.display='none'">
+              <div class="team-name">Cajamarca</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>0</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+              <div class="game-status">
+                <span class="status-dot "></span>
+                67
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://r2.thesportsdb.com/images/media/team/badge/ea4ez01580040095.png" alt="Universidad Técnica de Cajamarca" loading="lazy" onerror="this.style.display='none'">
+              <div class="team-name">Universidad Técnica de Cajamarca</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">Fanatiz, Liga 1 Max, Fanatiz Canada, Liga1 Play, TV 360</div>
+          </div>
+        </article>
+        
+      
+    </section>
+
+    <footer>Live scoreboard · Data and broadcast availability may vary by region.</footer>
+  </main>
+</body>
+</html>
