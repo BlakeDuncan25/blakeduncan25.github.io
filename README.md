@@ -1,9 +1,43 @@
-<table width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td><table width="100%" cellpadding="4" cellspacing="0" border="0"><tr><td align="center" width="75%"><strong>Albanian Superliga</strong></td><td align="right" width="25%"><img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/58.svg" alt="58" width="40" height="40" style="object-fit:contain; vertical-align:middle;"></td></tr></table><table width="100%" cellpadding="4" cellspacing="0" border="0"><tr><td width="36%" align="center" valign="middle"><table cellpadding="2" cellspacing="0" border="0"><tr><td align="center" valign="middle"><img src="https://r2.thesportsdb.com/images/media/team/badge/39pb2n1692001424.png" alt="Elbasani" width="36" height="36"></td><td align="center" valign="middle"><strong>2</strong></td></tr><tr><td colspan="2" align="center"><small>Elbasani</small></td></tr></table></td><td width="28%" align="center" valign="middle"><table cellpadding="2" cellspacing="0" border="0"><tr><td align="center"><strong>2H</strong></td></tr><tr><td align="center"><small>90+12</small></td></tr></table></td><td width="36%" align="center" valign="middle"><table cellpadding="2" cellspacing="0" border="0"><tr><td align="center" valign="middle"><strong>1</strong></td><td align="center" valign="middle"><img src="https://r2.thesportsdb.com/images/media/team/badge/shg04y1578828329.png" alt="Partizani Tirana" width="36" height="36"></td></tr><tr><td colspan="2" align="center"><small>Partizani Tirana</small></td></tr></table></td></tr></table><table width="100%" cellpadding="4" cellspacing="0" border="0"><tr><td align="center"><small>DAZN USA, DAZN International, DAZN Canada, fuboTV Canada, DAZN Germany</small></td></tr></table></td></tr></table>
+# Live Sports Scoreboard
+
+A live, multi-sport scoreboard that combines match ratings, scores, team logos, and TV listings to help identify the most interesting games to watch.
+
+## View the Scoreboard
+
+**[Open the Live Sports Scoreboard](https://blakeduncan25.github.io/)**
+
+The website features a responsive, mobile-friendly interface with match ratings, live scores, team information, and available broadcast listings.
+
+## Features
+
+- **Live scores:** Retrieve live sporting events from TheSportsDB.
+- **Match ratings:** Rank games by rating to highlight the most compelling matchups.
+- **Score projections:** Incorporate model-generated projections into the data workflow.
+- **TV listings:** Display available broadcast information alongside each matchup.
+- **Automated updates:** Process and publish scoreboard updates through Python and the GitHub API.
+- **Responsive design:** Dedicated HTML and CSS provide a more app-like experience on desktop and mobile.
+
+## Technology
+
+- Python and pandas
+- TheSportsDB API
+- Google Sheets
+- GitHub Contents API
+- GitHub Pages
+- HTML and CSS
+
+## How It Works
+
+1. Fetch live sporting events.
+2. Calculate or retrieve projections and ratings.
+3. Process the results and TV listings through Google Sheets.
+4. Generate a standalone HTML scoreboard.
+5. Publish the updated page to GitHub Pages.
+
+## Notes
+
+Scores, ratings, and broadcast availability depend on the underlying data sources. TV listings may vary by region, and the scoreboard only displays the events returned by the data pipeline.
 
 ---
 
-<table width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td><table width="100%" cellpadding="4" cellspacing="0" border="0"><tr><td align="center" width="75%"><strong>Basketball Champions League</strong></td><td align="right" width="25%"><img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/47.svg" alt="47" width="40" height="40" style="object-fit:contain; vertical-align:middle;"></td></tr></table><table width="100%" cellpadding="4" cellspacing="0" border="0"><tr><td width="36%" align="center" valign="middle"><table cellpadding="2" cellspacing="0" border="0"><tr><td align="center" valign="middle"><img src="https://r2.thesportsdb.com/images/media/team/badge/ukssyu1714562769.png" alt="Rasta Vechta" width="36" height="36"></td><td align="center" valign="middle"><strong>68</strong></td></tr><tr><td colspan="2" align="center"><small>Rasta Vechta</small></td></tr></table></td><td width="28%" align="center" valign="middle"><table cellpadding="2" cellspacing="0" border="0"><tr><td align="center"><strong>Q4</strong></td></tr><tr><td align="center"><small>3</small></td></tr></table></td><td width="36%" align="center" valign="middle"><table cellpadding="2" cellspacing="0" border="0"><tr><td align="center" valign="middle"><strong>75</strong></td><td align="center" valign="middle"><img src="https://r2.thesportsdb.com/images/media/team/badge/n2jjb81698244950.png" alt="Hapoel Holon" width="36" height="36"></td></tr><tr><td colspan="2" align="center"><small>Hapoel Holon</small></td></tr></table></td></tr></table><table width="100%" cellpadding="4" cellspacing="0" border="0"><tr><td align="center"><small>DAZN</small></td></tr></table></td></tr></table>
-
----
-
-<table width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td><table width="100%" cellpadding="4" cellspacing="0" border="0"><tr><td align="center" width="75%"><strong>Peruvian Primera Division</strong></td><td align="right" width="25%"><img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/43.svg" alt="43" width="40" height="40" style="object-fit:contain; vertical-align:middle;"></td></tr></table><table width="100%" cellpadding="4" cellspacing="0" border="0"><tr><td width="36%" align="center" valign="middle"><table cellpadding="2" cellspacing="0" border="0"><tr><td align="center" valign="middle"><img src="https://r2.thesportsdb.com/images/media/team/badge/fl9mlx1768236425.png" alt="Cajamarca" width="36" height="36"></td><td align="center" valign="middle"><strong>0</strong></td></tr><tr><td colspan="2" align="center"><small>Cajamarca</small></td></tr></table></td><td width="28%" align="center" valign="middle"><table cellpadding="2" cellspacing="0" border="0"><tr><td align="center"><strong>2H</strong></td></tr><tr><td align="center"><small>61</small></td></tr></table></td><td width="36%" align="center" valign="middle"><table cellpadding="2" cellspacing="0" border="0"><tr><td align="center" valign="middle"><strong>1</strong></td><td align="center" valign="middle"><img src="https://r2.thesportsdb.com/images/media/team/badge/ea4ez01580040095.png" alt="Universidad Técnica de Cajamarca" width="36" height="36"></td></tr><tr><td colspan="2" align="center"><small>Universidad Técnica de Cajamarca</small></td></tr></table></td></tr></table><table width="100%" cellpadding="4" cellspacing="0" border="0"><tr><td align="center"><small>Fanatiz, Liga 1 Max, Fanatiz Canada, Liga1 Play, TV 360</small></td></tr></table></td></tr></table>
+**[View the live scoreboard →](https://blakeduncan25.github.io/)**
