@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#08090c">
 <meta name="description" content="Live sports scores, match ratings, and TV listings.">
-<meta name="build-id" content="1793379681">
+<meta name="build-id" content="1793380041">
 <title>Live Sports Scoreboard</title>
+
 <style>
   :root {
     color-scheme: dark;
@@ -19,14 +20,16 @@
     --live: #ff514e;
   }
 
-  * { box-sizing: border-box; }
+  * {
+    box-sizing: border-box;
+  }
 
   body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-                 "Segoe UI", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont,
+                 "SF Pro Display", "Segoe UI", sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -114,7 +117,7 @@
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center;
     gap: 8px;
-    padding: 19px 14px 17px;
+    padding: 16px 14px;
   }
 
   .team {
@@ -122,15 +125,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 9px;
+    gap: 7px;
     text-align: center;
   }
 
   .team-logo {
     display: block;
-    width: 48px;
-    height: 48px;
+    width: 30px;
+    height: 30px;
     object-fit: contain;
+    flex: 0 0 30px;
   }
 
   .team-name {
@@ -216,9 +220,18 @@
     text-decoration: none;
   }
 
-  .tv-listing a:hover { text-decoration: underline; }
-  .tv-separator { color: #666b76; padding: 0 3px; }
-  .muted { color: var(--muted); }
+  .tv-listing a:hover {
+    text-decoration: underline;
+  }
+
+  .tv-separator {
+    color: #666b76;
+    padding: 0 3px;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
 
   .empty-state {
     padding: 36px 18px;
@@ -236,75 +249,77 @@
   }
 
   @media (min-width: 680px) {
-    .page { padding-top: 42px; }
-    .scoreboard { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .matchup { gap: 4px; padding-left: 10px; padding-right: 10px; }
-    .team-logo { width: 42px; height: 42px; }
-    .score-block { min-width: 88px; }
-    .score-line { gap: 6px; }
+    .page {
+      padding-top: 42px;
+    }
+
+    .scoreboard {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .matchup {
+      gap: 4px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .score-block {
+      min-width: 88px;
+    }
+
+    .score-line {
+      gap: 6px;
+    }
   }
 
   @media (max-width: 380px) {
-    .page { width: calc(100% - 18px); }
-    .matchup { padding-left: 8px; padding-right: 8px; gap: 4px; }
-    .team-logo { width: 38px; height: 38px; }
-    .team-name { font-size: 11px; }
-    .score-block { min-width: 82px; }
-    .score-line { gap: 5px; font-size: 28px; }
-    .updated { font-size: 10px; }
+    .page {
+      width: calc(100% - 18px);
+    }
+
+    .matchup {
+      padding-left: 8px;
+      padding-right: 8px;
+      gap: 4px;
+    }
+
+    .team-name {
+      font-size: 11px;
+    }
+
+    .score-block {
+      min-width: 82px;
+    }
+
+    .score-line {
+      gap: 5px;
+      font-size: 28px;
+    }
+
+    .updated {
+      font-size: 10px;
+    }
   }
 </style>
 </head>
+
 <body>
   <main class="page">
     <header class="page-header">
       <div>
         <h1>Sports</h1>
-        <div class="subtitle">Scores · Ratings · Where to watch</div>
+        <div class="subtitle">
+          Scores · Ratings · Where to watch
+        </div>
       </div>
-      <div class="updated">Updated<br>Oct 30, 2026 · 17:01 UTC</div>
+
+      <div class="updated">
+        Updated<br>Oct 30, 2026 · 17:07 UTC
+      </div>
     </header>
 
     <section class="scoreboard">
       
-        <article class="game-card">
-          <div class="card-header">
-            <div class="league-name">SM-sarja U20</div>
-            <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/100.svg" alt="100" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
-            </div>
-          </div>
-
-          <div class="matchup">
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/AZyVP3gT-jkMk9FI6.png" alt="Jyvaskyla U20" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Jyvaskyla U20</div>
-            </div>
-
-            <div class="score-block">
-              <div class="score-line">
-                <span>4</span>
-                <span class="score-divider">:</span>
-                <span>3</span>
-              </div>
-              <div class="game-status">
-                <span class="status-dot live"></span>
-                P3 - 3rd Period 20
-              </div>
-            </div>
-
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/ATVzyogT-tbNvCtuf.png" alt="RoKi U20" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">RoKi U20</div>
-            </div>
-          </div>
-
-          <div class="tv-row">
-            <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
-          </div>
-        </article>
-        
         <article class="game-card">
           <div class="card-header">
             <div class="league-name">MHL</div>
@@ -315,7 +330,7 @@
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/0drTp7me-Of2aEeMi.png" alt="Dinamo-Shinnik" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/0drTp7me-Of2aEeMi.png" alt="Dinamo-Shinnik" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Dinamo-Shinnik</div>
             </div>
 
@@ -325,59 +340,24 @@
                 <span class="score-divider">:</span>
                 <span>2</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
-                BT
+                P3 - 3rd Period 1
               </div>
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/GrIfb1AN-4hjZxd0c.png" alt="Dyn. Moscow" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/GrIfb1AN-4hjZxd0c.png" alt="Dyn. Moscow" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Dyn. Moscow</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
-          </div>
-        </article>
-        
-        <article class="game-card">
-          <div class="card-header">
-            <div class="league-name">Premier League</div>
-            <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/83.svg" alt="83" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            <div class="tv-listing">
+              -
             </div>
-          </div>
-
-          <div class="matchup">
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/CQlfrr8k-lCxMaEY9.png" alt="Al Riffa" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Al Riffa</div>
-            </div>
-
-            <div class="score-block">
-              <div class="score-line">
-                <span>2</span>
-                <span class="score-divider">:</span>
-                <span>2</span>
-              </div>
-              <div class="game-status">
-                <span class="status-dot live"></span>
-                LIVE - 90+9
-              </div>
-            </div>
-
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/MsQAOrS0-Cr3ympLj.png" alt="Al Najma" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Al Najma</div>
-            </div>
-          </div>
-
-          <div class="tv-row">
-            <span class="tv-label">WATCH</span>
-            <div class="tv-listing">YouTube</div>
           </div>
         </article>
         
@@ -385,13 +365,13 @@
           <div class="card-header">
             <div class="league-name">KHL</div>
             <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/80.svg" alt="80" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/86.svg" alt="86" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
             </div>
           </div>
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/043MuqkC-G0gA6XCq.png" alt="Lada" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/043MuqkC-G0gA6XCq.png" alt="Lada" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Lada</div>
             </div>
 
@@ -401,21 +381,106 @@
                 <span class="score-divider">:</span>
                 <span>2</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
-                P3 - 3rd Period 6
+                P3 - 3rd Period 7
               </div>
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/UNr4qblC-xfCXptqF.png" alt="Avangard Omsk" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/UNr4qblC-xfCXptqF.png" alt="Avangard Omsk" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Avangard Omsk</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Africa Cup of Nations U20 - Qualification - Placement Play Offs</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/82.svg" alt="82" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/pAqaKsQq-ldWGNVVE.png" alt="Sierra Leone U20" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Sierra Leone U20</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>2</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                LIVE - 47
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/2Hu1bGR0-K6VrDp5l.png" alt="Senegal U20" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Senegal U20</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">ELJ</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/82.svg" alt="82" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Aec22Wme-AwcWYraj.png" alt="Plzen U20" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Plzen U20</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>1</span>
+                <span class="score-divider">:</span>
+                <span>2</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                P2 - 2nd Period 15
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/OdkZsY5k-YV2zQsxD.png" alt="Sparta Prague U20" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Sparta Prague U20</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
           </div>
         </article>
         
@@ -423,13 +488,13 @@
           <div class="card-header">
             <div class="league-name">Premier League</div>
             <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/79.svg" alt="79" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/81.svg" alt="81" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
             </div>
           </div>
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/pj2Uwr86-Sh2IppjH.png" alt="Kadiogo" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/pj2Uwr86-Sh2IppjH.png" alt="Kadiogo" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Kadiogo</div>
             </div>
 
@@ -439,97 +504,24 @@
                 <span class="score-divider">:</span>
                 <span>1</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
-                LIVE - 73
+                LIVE - 79
               </div>
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/j1UenhT0-x8gUvUYD.png" alt="FocuSport" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/j1UenhT0-x8gUvUYD.png" alt="FocuSport" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">FocuSport</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
-          </div>
-        </article>
-        
-        <article class="game-card">
-          <div class="card-header">
-            <div class="league-name">SM-sarja U20</div>
-            <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/72.svg" alt="72" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            <div class="tv-listing">
+              -
             </div>
-          </div>
-
-          <div class="matchup">
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/4zECqyUH-WUnzea6O.png" alt="Ilves U20" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Ilves U20</div>
-            </div>
-
-            <div class="score-block">
-              <div class="score-line">
-                <span>1</span>
-                <span class="score-divider">:</span>
-                <span>1</span>
-              </div>
-              <div class="game-status">
-                <span class="status-dot live"></span>
-                P2 - 2nd Period 2
-              </div>
-            </div>
-
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/I3VMSXVH-2PJ11A6r.png" alt="Tappara U20" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Tappara U20</div>
-            </div>
-          </div>
-
-          <div class="tv-row">
-            <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
-          </div>
-        </article>
-        
-        <article class="game-card">
-          <div class="card-header">
-            <div class="league-name">Elite League</div>
-            <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
-            </div>
-          </div>
-
-          <div class="matchup">
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/CldZyPT0-Q95WM4JR.png" alt="Komotini" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Komotini</div>
-            </div>
-
-            <div class="score-block">
-              <div class="score-line">
-                <span>76</span>
-                <span class="score-divider">:</span>
-                <span>67</span>
-              </div>
-              <div class="game-status">
-                <span class="status-dot live"></span>
-                Q4 - 4th Quarter 10
-              </div>
-            </div>
-
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/xpTqmJ8k-zkQEXilE.png" alt="Chalkida" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Chalkida</div>
-            </div>
-          </div>
-
-          <div class="tv-row">
-            <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
           </div>
         </article>
         
@@ -537,22 +529,23 @@
           <div class="card-header">
             <div class="league-name">Extraleague</div>
             <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/75.svg" alt="75" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
             </div>
           </div>
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/G83PyhU0-rgv1wAD5.png" alt="Baranavichy" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Baranavichy</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/z5fN0e96-xMMkb421.png" alt="Lokomotiv Orsha" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Lokomotiv Orsha</div>
             </div>
 
             <div class="score-block">
               <div class="score-line">
-                <span>0</span>
-                <span class="score-divider">:</span>
                 <span>1</span>
+                <span class="score-divider">:</span>
+                <span>2</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
                 BT
@@ -560,29 +553,113 @@
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/MZcTiaCN-pbMiEVKA.png" alt="Molodechno" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Molodechno</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/xlai33me-W8XorHu5.png" alt="Zhlobin" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Zhlobin</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">YouTube</div>
+            <div class="tv-listing">
+              YouTube
+            </div>
           </div>
         </article>
         
         <article class="game-card">
           <div class="card-header">
-            <div class="league-name">Premier League</div>
+            <div class="league-name">Extraleague</div>
             <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/67.svg" alt="67" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/75.svg" alt="75" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
             </div>
           </div>
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/nTXEYxWH-xYpJaFv3.png" alt="Asyut Petroleum" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Asyut Petroleum</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/ChSTVQ7k-SIcNTzqa.png" alt="Soligorsk" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Soligorsk</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>1</span>
+                <span class="score-divider">:</span>
+                <span>2</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/z7yfo1iT-zmyJFvr1.png" alt="Gomel" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Gomel</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              YouTube
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Ligue 2 Women</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/70.svg" alt="70" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/YBSo4iAN-IP5PV1rQ.png" alt="Centre Federal BB W" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Centre Federal BB W</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>45</span>
+                <span class="score-divider">:</span>
+                <span>49</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                Q3 - 3rd Quarter 3
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/CWJivukC-GCqv14ge.png" alt="Nice W" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Nice W</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Mestis</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Qk3KT3CN-phRiTdF4.png" alt="K-Vantaa" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">K-Vantaa</div>
             </div>
 
             <div class="score-block">
@@ -591,36 +668,121 @@
                 <span class="score-divider">:</span>
                 <span>1</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
-                LIVE - 90+7
+                BT
               </div>
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/ARowJsRq-rFudGJm8.png" alt="El Gouna" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">El Gouna</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/6g9FEMjT-MXGYxAqA.png" alt="RoKi" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">RoKi</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
+            <div class="tv-listing">
+              -
+            </div>
           </div>
         </article>
         
         <article class="game-card">
           <div class="card-header">
-            <div class="league-name">KHL</div>
+            <div class="league-name">Tipsport liga</div>
             <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/66.svg" alt="66" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
             </div>
           </div>
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/AiYJYzT0-xIWWfwN7.png" alt="Cherepovets" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Cherepovets</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/82rsm9VH-O2vzPUWu.png" alt="Ban. Bystrica" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Ban. Bystrica</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>1</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/tETy8rkC-0E6xuYa3.png" alt="Presov" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Presov</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Tipsport liga</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/zemSukVH-AFvfRjg8.png" alt="Poprad" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Poprad</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>1</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/dfHCxh86-4hQqxfZ9.png" alt="Kosice" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Kosice</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Extraliga</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/zRvMi4lC-hhuZJcqF.png" alt="Mlada Boleslav" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Mlada Boleslav</div>
             </div>
 
             <div class="score-block">
@@ -629,21 +791,311 @@
                 <span class="score-divider">:</span>
                 <span>1</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
-                P2 - 2nd Period 8
+                BT
               </div>
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/nNSI2PQq-reD2dQ65.png" alt="Spartak Moscow" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Spartak Moscow</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/QZfmqOne-MJwZtWIs.png" alt="Sparta Prague" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Sparta Prague</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Extraliga</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/zgspev6k-Aih1Wkwh.png" alt="Plzen" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Plzen</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>0</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Eijd29AN-CbJfA5RB.png" alt="Trinec" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Trinec</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Liiga</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/tQ05sple-6B13ErSH.png" alt="Lukko" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Lukko</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>0</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Cj1GAXme-C2m5GYoS.png" alt="KooKoo" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">KooKoo</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Liiga</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/KWIzjRT0-rNwMu6T6.png" alt="SaiPa" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">SaiPa</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>0</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Y9gor6oe-jqN91Qd0.png" alt="JYP" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">JYP</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Liiga</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/xj6zn9jT-WWqSCbBB.png" alt="Tappara" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Tappara</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>0</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Eu6waVoe-WUnzea6O.png" alt="Ilves" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Ilves</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Liiga</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/tKlOanA6-YmnqXZW0.png" alt="TPS Turku" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">TPS Turku</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>0</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Oh2y0B86-rkj8ujyS.png" alt="Pelicans" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Pelicans</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Mestis</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/MiVqjzQq-hA0JB5dL.png" alt="Kiekko-Pojat" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Kiekko-Pojat</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>1</span>
+                <span class="score-divider">:</span>
+                <span>0</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/YBk7TSU0-MTj3Lcm0.png" alt="Hermes" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Hermes</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">KHL</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/69.svg" alt="69" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/AkXgFbQq-jcYuR8CN.png" alt="Shanghai" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Shanghai</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>1</span>
+                <span class="score-divider">:</span>
+                <span>0</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/zq7ZKF7k-KAge4arU.png" alt="Barys Astana" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Barys Astana</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
           </div>
         </article>
         
@@ -657,7 +1109,7 @@
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/ryv6KhjT-tlICCNCa.png" alt="IFK Helsinki U20" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/ryv6KhjT-tlICCNCa.png" alt="IFK Helsinki U20" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">IFK Helsinki U20</div>
             </div>
 
@@ -667,21 +1119,24 @@
                 <span class="score-divider">:</span>
                 <span>0</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
-                P2 - 2nd Period 9
+                P2 - 2nd Period 13
               </div>
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/CGya5E8k-rR5nxAAf.png" alt="Jokerit U20" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/CGya5E8k-rR5nxAAf.png" alt="Jokerit U20" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Jokerit U20</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
+            <div class="tv-listing">
+              -
+            </div>
           </div>
         </article>
         
@@ -689,13 +1144,13 @@
           <div class="card-header">
             <div class="league-name">Segunda Division - Promotion Group</div>
             <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/63.svg" alt="63" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/64.svg" alt="64" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
             </div>
           </div>
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/lGK3SzA6-bVysW2Wt.png" alt="Santiago City" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/lGK3SzA6-bVysW2Wt.png" alt="Santiago City" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Santiago City</div>
             </div>
 
@@ -705,21 +1160,147 @@
                 <span class="score-divider">:</span>
                 <span>1</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
-                LIVE - 73
+                LIVE - 79
               </div>
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/viz2uST0-4Es6lDgT.png" alt="Dep. Linares" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/viz2uST0-4Es6lDgT.png" alt="Dep. Linares" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Dep. Linares</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">2. liga</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/58.svg" alt="58" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/b7byeJ6k-t4QdFfaQ.png" alt="Pohronie" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Pohronie</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>1</span>
+                <span class="score-divider">:</span>
+                <span>0</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                LIVE - 50
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/GtC6joUH-nc5KYlrS.png" alt="Slovan Bratislava B" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Slovan Bratislava B</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Euroleague</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/57.svg" alt="57" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/tQaiVdWH-8UKNAPGH.png" alt="Dubai" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Dubai</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>47</span>
+                <span class="score-divider">:</span>
+                <span>40</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                Q3 - 3rd Quarter 1
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/SMIdYniC-QmUm6Xj3.png" alt="Hapoel Tel Aviv" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Hapoel Tel Aviv</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              EuroLeague TV
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">ELJ</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/56.svg" alt="56" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/ObjWAXT0-KEgVyEJ5.png" alt="Mountfield HK U20" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Mountfield HK U20</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>4</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                P2 - 2nd Period 14
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/AFYRNxUH-z9Q3ML8h.png" alt="Ceske Budejovice U20" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Ceske Budejovice U20</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
           </div>
         </article>
         
@@ -733,7 +1314,7 @@
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/d48p0t7k-8S5M6mpC.png" alt="Tambov" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/d48p0t7k-8S5M6mpC.png" alt="Tambov" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Tambov</div>
             </div>
 
@@ -743,6 +1324,7 @@
                 <span class="score-divider">:</span>
                 <span>1</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
                 BT
@@ -750,20 +1332,63 @@
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/YV1pNyXH-xEQiYitt.png" alt="Olympia" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/YV1pNyXH-xEQiYitt.png" alt="Olympia" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Olympia</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">YouTube</div>
+            <div class="tv-listing">
+              YouTube
+            </div>
           </div>
         </article>
         
         <article class="game-card">
           <div class="card-header">
-            <div class="league-name">Championship</div>
+            <div class="league-name">Elite League</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/55.svg" alt="55" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/CldZyPT0-Q95WM4JR.png" alt="Komotini" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Komotini</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>78</span>
+                <span class="score-divider">:</span>
+                <span>71</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                Q4 - 4th Quarter 10
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/xpTqmJ8k-zkQEXilE.png" alt="Chalkida" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Chalkida</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Liga 2</div>
             <div class="card-header-right">
               <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/49.svg" alt="49" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
             </div>
@@ -771,31 +1396,34 @@
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/CboPGRVH-rcAsonuA.png" alt="Kremenchuk" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Kremenchuk</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Yufg87WH-Sr53OjkC.png" alt="Steaua Bucuresti" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Steaua Bucuresti</div>
             </div>
 
             <div class="score-block">
               <div class="score-line">
-                <span>4</span>
+                <span>0</span>
                 <span class="score-divider">:</span>
-                <span>1</span>
+                <span>0</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
-                P3 - 3rd Period 16
+                LIVE - 49
               </div>
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/IDDTiXR0-8U06CI1l.png" alt="Sokil Kyiv" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Sokil Kyiv</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Wztd3CA6-O6OyldJg.png" alt="CS Din. Bucuresti" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">CS Din. Bucuresti</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">YouTube</div>
+            <div class="tv-listing">
+              -
+            </div>
           </div>
         </article>
         
@@ -803,13 +1431,13 @@
           <div class="card-header">
             <div class="league-name">Sultan Cup</div>
             <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/48.svg" alt="48" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/49.svg" alt="49" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
             </div>
           </div>
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/SdB57qiT-dI3D3epF.png" alt="Nizwa" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/SdB57qiT-dI3D3epF.png" alt="Nizwa" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Nizwa</div>
             </div>
 
@@ -819,6 +1447,89 @@
                 <span class="score-divider">:</span>
                 <span>2</span>
               </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                LIVE - 52
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/QyC6roPq-j7gWRm4i.png" alt="Fanja SC" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Fanja SC</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">ChNL</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/49.svg" alt="49" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/SvzOf5le-ULpLdDOG.png" alt="Vlasim" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Vlasim</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>2</span>
+                <span class="score-divider">:</span>
+                <span>0</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                LIVE - 50
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/GKRnuHR0-OY2V0o27.png" alt="Usti nad Labem" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Usti nad Labem</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Premier League</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/49.svg" alt="49" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/fLOld9A6-YmCZKGcR.png" alt="Shakhtar Donetsk" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Shakhtar Donetsk</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>0</span>
+                <span class="score-divider">:</span>
+                <span>0</span>
+              </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
                 LIVE - 46
@@ -826,90 +1537,16 @@
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/QyC6roPq-j7gWRm4i.png" alt="Fanja SC" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Fanja SC</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/jB3p83me-QanlLhoo.png" alt="Obolon" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Obolon</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
-          </div>
-        </article>
-        
-        <article class="game-card">
-          <div class="card-header">
-            <div class="league-name">efbet League</div>
-            <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/45.svg" alt="45" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            <div class="tv-listing">
+              OneFootball TV
             </div>
-          </div>
-
-          <div class="matchup">
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/CrPTEUT0-xWiwLpT4.png" alt="CSKA 1948 Sofia" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">CSKA 1948 Sofia</div>
-            </div>
-
-            <div class="score-block">
-              <div class="score-line">
-                <span>6</span>
-                <span class="score-divider">:</span>
-                <span>1</span>
-              </div>
-              <div class="game-status">
-                <span class="status-dot live"></span>
-                LIVE - 90+2
-              </div>
-            </div>
-
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/6TetCWBN-boO56d81.png" alt="Spartak Varna" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Spartak Varna</div>
-            </div>
-          </div>
-
-          <div class="tv-row">
-            <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
-          </div>
-        </article>
-        
-        <article class="game-card">
-          <div class="card-header">
-            <div class="league-name">KHL</div>
-            <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/43.svg" alt="43" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
-            </div>
-          </div>
-
-          <div class="matchup">
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/tAmLD0WH-8IQDNH6S.png" alt="Bars Kazan" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Bars Kazan</div>
-            </div>
-
-            <div class="score-block">
-              <div class="score-line">
-                <span>2</span>
-                <span class="score-divider">:</span>
-                <span>0</span>
-              </div>
-              <div class="game-status">
-                <span class="status-dot live"></span>
-                P2 - 2nd Period 4
-              </div>
-            </div>
-
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/0jqs5UQq-CYk0zAUO.png" alt="Khabarovsk" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Khabarovsk</div>
-            </div>
-          </div>
-
-          <div class="tv-row">
-            <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
           </div>
         </article>
         
@@ -917,51 +1554,13 @@
           <div class="card-header">
             <div class="league-name">MHL</div>
             <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/41.svg" alt="41" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/42.svg" alt="42" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
             </div>
           </div>
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/hrYqhFU0-4IsikayG.png" alt="AKM-Junior" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">AKM-Junior</div>
-            </div>
-
-            <div class="score-block">
-              <div class="score-line">
-                <span>2</span>
-                <span class="score-divider">:</span>
-                <span>0</span>
-              </div>
-              <div class="game-status">
-                <span class="status-dot live"></span>
-                BT
-              </div>
-            </div>
-
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/vsYyYiUH-lfokh7sg.png" alt="Belye Medvedi" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Belye Medvedi</div>
-            </div>
-          </div>
-
-          <div class="tv-row">
-            <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
-          </div>
-        </article>
-        
-        <article class="game-card">
-          <div class="card-header">
-            <div class="league-name">MHL</div>
-            <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/41.svg" alt="41" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
-            </div>
-          </div>
-
-          <div class="matchup">
-            <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/raFJrsS0-lpnbMmvA.png" alt="Loko-76" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/raFJrsS0-lpnbMmvA.png" alt="Loko-76" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Loko-76</div>
             </div>
 
@@ -971,6 +1570,130 @@
                 <span class="score-divider">:</span>
                 <span>0</span>
               </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                P3 - 3rd Period 3
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/foAAswWH-CCO2Aqpa.png" alt="Molot Perm" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Molot Perm</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Championship</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/42.svg" alt="42" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/CboPGRVH-rcAsonuA.png" alt="Kremenchuk" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Kremenchuk</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>4</span>
+                <span class="score-divider">:</span>
+                <span>1</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                P3 - 3rd Period 20
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/IDDTiXR0-8U06CI1l.png" alt="Sokil Kyiv" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Sokil Kyiv</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              YouTube
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">KHL</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/42.svg" alt="42" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/AiYJYzT0-xIWWfwN7.png" alt="Cherepovets" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Cherepovets</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>0</span>
+                <span class="score-divider">:</span>
+                <span>2</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                P2 - 2nd Period 12
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/nNSI2PQq-reD2dQ65.png" alt="Spartak Moscow" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Spartak Moscow</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Liiga</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/41.svg" alt="41" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/UVdjA0Rq-WUnzea6O.png" alt="Hameenlinna" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Hameenlinna</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>0</span>
+                <span class="score-divider">:</span>
+                <span>2</span>
+              </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
                 BT
@@ -978,52 +1701,98 @@
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/foAAswWH-CCO2Aqpa.png" alt="Molot Perm" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Molot Perm</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/EiDMFUPq-293U49T4.png" alt="Kiekko-Espoo" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Kiekko-Espoo</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
+            <div class="tv-listing">
+              -
+            </div>
           </div>
         </article>
         
         <article class="game-card">
           <div class="card-header">
-            <div class="league-name">ELJ</div>
+            <div class="league-name">MHL</div>
             <div class="card-header-right">
-              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/31.svg" alt="31" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/41.svg" alt="41" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
             </div>
           </div>
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/tlU7TVU0-MmZ6E4Ur.png" alt="Liberec U20" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Liberec U20</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/hrYqhFU0-4IsikayG.png" alt="AKM-Junior" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">AKM-Junior</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>2</span>
+                <span class="score-divider">:</span>
+                <span>0</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/vsYyYiUH-lfokh7sg.png" alt="Belye Medvedi" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Belye Medvedi</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Extraliga</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/36.svg" alt="36" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/CWG6DugT-Ia2xiNaT.png" alt="Litvinov" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Litvinov</div>
             </div>
 
             <div class="score-block">
               <div class="score-line">
                 <span>0</span>
                 <span class="score-divider">:</span>
-                <span>4</span>
+                <span>3</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
-                P2 - 2nd Period 5
+                BT
               </div>
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/xx8oqFoe-b3oej1s9.png" alt="Trinec U20" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Trinec U20</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/rBcmaMRq-WAIuNIa7.png" alt="Vitkovice" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Vitkovice</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
+            <div class="tv-listing">
+              -
+            </div>
           </div>
         </article>
         
@@ -1037,7 +1806,7 @@
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/IXoVBlAN-UmJTht7P.png" alt="Vitebsk" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/IXoVBlAN-UmJTht7P.png" alt="Vitebsk" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Vitebsk</div>
             </div>
 
@@ -1047,27 +1816,30 @@
                 <span class="score-divider">:</span>
                 <span>0</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
-                P2 - 2nd Period 7
+                P2 - 2nd Period 11
               </div>
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/2sN6dWWH-KphgXqLI.png" alt="Lida" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/2sN6dWWH-KphgXqLI.png" alt="Lida" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Lida</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">YouTube</div>
+            <div class="tv-listing">
+              YouTube
+            </div>
           </div>
         </article>
         
         <article class="game-card">
           <div class="card-header">
-            <div class="league-name">KHL</div>
+            <div class="league-name">Tipsport liga</div>
             <div class="card-header-right">
               <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/1.svg" alt="1" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
             </div>
@@ -1075,8 +1847,8 @@
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Q5LavxT0-nexJVvF1.png" alt="Dinamo Minsk" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Dinamo Minsk</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/EZuWGJme-INnudM7I.png" alt="Michalovce" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Michalovce</div>
             </div>
 
             <div class="score-block">
@@ -1085,6 +1857,7 @@
                 <span class="score-divider">:</span>
                 <span>0</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
                 BT
@@ -1092,14 +1865,57 @@
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/fLqkRcCN-QanlLhoo.png" alt="Tractor Chelyabinsk" loading="lazy" onerror="this.style.display='none'">
-              <div class="team-name">Tractor Chelyabinsk</div>
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/z7u1sE5k-tSOF8jfc.png" alt="Dukla Trencin" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Dukla Trencin</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">-</div>
+            <div class="tv-listing">
+              -
+            </div>
+          </div>
+        </article>
+        
+        <article class="game-card">
+          <div class="card-header">
+            <div class="league-name">Tipsport liga</div>
+            <div class="card-header-right">
+              <img src="https://raw.githubusercontent.com/BlakeDuncan25/Donut-SVG-Ratings/bac4e4a278175106499642192132b1786a9aec38/1.svg" alt="1" width="40" height="40" style="object-fit:contain; vertical-align:middle;">
+            </div>
+          </div>
+
+          <div class="matchup">
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/jBDHYskC-bJD4ilZ5.png" alt="Zilina" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Zilina</div>
+            </div>
+
+            <div class="score-block">
+              <div class="score-line">
+                <span>0</span>
+                <span class="score-divider">:</span>
+                <span>0</span>
+              </div>
+
+              <div class="game-status">
+                <span class="status-dot live"></span>
+                BT
+              </div>
+            </div>
+
+            <div class="team">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/G2niFkBN-2ublrUCh.png" alt="Nitra" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <div class="team-name">Nitra</div>
+            </div>
+          </div>
+
+          <div class="tv-row">
+            <span class="tv-label">WATCH</span>
+            <div class="tv-listing">
+              -
+            </div>
           </div>
         </article>
         
@@ -1113,16 +1929,17 @@
 
           <div class="matchup">
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Mqwtmt86-zBVznxY7.png" alt="Brampton Blazers" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/Mqwtmt86-zBVznxY7.png" alt="Brampton Blazers" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Brampton Blazers</div>
             </div>
 
             <div class="score-block">
               <div class="score-line">
-                <span>114</span>
+                <span>122</span>
                 <span class="score-divider">:</span>
                 <span>199</span>
               </div>
+
               <div class="game-status">
                 <span class="status-dot live"></span>
                 LIVE - BRA Inns
@@ -1130,21 +1947,25 @@
             </div>
 
             <div class="team">
-              <img class="team-logo" src="https://static.flashscore.com/res/image/data/0MSE8rBN-ni4oQFSo.png" alt="Vancouver Guardians" loading="lazy" onerror="this.style.display='none'">
+              <img class="team-logo" src="https://static.flashscore.com/res/image/data/0MSE8rBN-ni4oQFSo.png" alt="Vancouver Guardians" width="30" height="30" loading="lazy" decoding="async" onerror="this.style.display='none'">
               <div class="team-name">Vancouver Guardians</div>
             </div>
           </div>
 
           <div class="tv-row">
             <span class="tv-label">WATCH</span>
-            <div class="tv-listing">ATN Cricket Plus (Usa/Can)</div>
+            <div class="tv-listing">
+              ATN Cricket Plus (Usa/Can)
+            </div>
           </div>
         </article>
         
       
     </section>
 
-    <footer>Live scoreboard · Data and broadcast availability may vary by region.</footer>
+    <footer>
+      Live scoreboard · Data and broadcast availability may vary by region.
+    </footer>
   </main>
 
   <script>
